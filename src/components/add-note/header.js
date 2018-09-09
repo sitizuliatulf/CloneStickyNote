@@ -5,9 +5,12 @@ import {
   StyleSheet,
   TouchableNativeFeedback,
   TouchableHighlight,
-  Text
+  Text,
+  Modal,
+  TouchableWithoutFeedback
 } from "react-native";
 import PropTypes from "prop-types";
+import Icon from "react-native-vector-icons/Ionicons";
 
 import ModalCustom from "../etc/modal-custom";
 
@@ -51,16 +54,70 @@ const styles = StyleSheet.create({
     width: "29%",
     margin: 5,
     height: 70
+  },
+  icon: {
+    width: "10%",
+    textAlign: "center"
+  },
+  containerModalMore: {
+    flex: 1
+  },
+  cardModalMore: {
+    position: "absolute",
+    top: 10,
+    right: 5,
+    width: 150,
+    borderRadius: 3,
+    elevation: 1,
+    backgroundColor: "white"
+  },
+  itemModalMore: {
+    padding: 8,
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  iconItemModalMore: {
+    width: "15%",
+    alignItems: "flex-start",
+    justifyContent: "center"
+  },
+  labelItemModalMore: {
+    fontSize: 18,
+    color: "black",
+    fontWeight: "400"
   }
 });
-
-const LIST_COLORS = ["#ffcd55", "#fa959f", "#555", "#cac8a0", "#718da5"];
 
 class Header extends PureComponent {
   state = {
     isFocusTextInput: false,
-    visibleListColors: false
+    visibleListColors: false,
+    visibleModalMore: false
   };
+
+  constructor() {
+    super();
+    this.listButtonsModalMore = [
+      {
+        label: "Save",
+        iconName: "md-bookmark",
+        onPress: this.onSaveNote
+      },
+      {
+        label: "Discard",
+        iconName: "md-trash",
+        onPress: this.onSaveNote
+      }
+    ];
+  }
+
+  static LIST_COLORS = [
+    { hexWithoutOpacity: "#ffcd55", hexWithOpacity: "rgba(255,205,85, 0.5)" },
+    { hexWithoutOpacity: "#fa959f", hexWithOpacity: "rgba(250,149,159,0.5)" },
+    { hexWithoutOpacity: "#555", hexWithOpacity: "rgba(85,85,85, 0.5)" },
+    { hexWithoutOpacity: "#cac8a0", hexWithOpacity: "rgba(202,200,160, 0.5)" },
+    { hexWithoutOpacity: "#718da5", hexWithOpacity: "rgba(113,141,165,0.5)" }
+  ];
 
   onToggleTextInput = () => {
     const nextIsFocusTextInput = !this.state.isFocusTextInput;
@@ -74,21 +131,25 @@ class Header extends PureComponent {
     }
   };
 
-  doToggleModalListColors = visibleListColors => () => {
+  doToggleModal = (stateName, value) => () => {
     this.setState({
-      visibleListColors
+      [stateName]: value
     });
   };
 
-  onChangeColorSelected = hexCode => () => {
+  onChangeColorSelected = hexCodeObj => () => {
     this.setState(
       {
         visibleListColors: false
       },
       () => {
-        this.props.onChangeColorSelected(hexCode);
+        this.props.onChangeColorSelected(hexCodeObj);
       }
     );
+  };
+
+  onSaveNote = () => {
+    this.props.onSaveNote();
   };
 
   render() {
@@ -101,32 +162,35 @@ class Header extends PureComponent {
       >
         <ModalCustom
           visible={this.state.visibleListColors}
-          onRequestClose={this.doToggleModalListColors(false)}
-          onPressBackdrop={this.doToggleModalListColors(false)}
+          onRequestClose={this.doToggleModal("visibleListColors", false)}
+          onPressBackdrop={this.doToggleModal("visibleListColors", false)}
         >
           <View style={styles.wrapperListColors}>
-            {LIST_COLORS.map(item => {
+            {Header.LIST_COLORS.map(item => {
               // let selectedColor = "transparent";
               // if (item === this.props.colorSelected) {
               //   selectedColor = "rgba(0,0,0,0.5)";
               // }
               return (
                 <TouchableHighlight
-                  key={item}
+                  key={item.hexWithoutOpacity}
                   underlayColor={"rgba(255,255,255,0.5)"} // kalau warnanya lagi aktif
                   onPress={this.onChangeColorSelected(item)}
-                  style={[styles.colors, { backgroundColor: item }]}
+                  style={[
+                    styles.colors,
+                    { backgroundColor: item.hexWithoutOpacity }
+                  ]}
                 >
                   <View
                     style={{
                       position: "absolute",
-                      left: 0,
+                      left: -20,
                       right: 0,
                       bottom: 0,
                       top: 0,
                       backgroundColor:
-                        this.props.colorSelected === item
-                          ? "rgba(0,0,0,0.3)"
+                        this.props.colorSelected === item.hexWithoutOpacity
+                          ? "rgba(255,255,255,0.7)"
                           : "transparent"
                     }}
                   />
@@ -135,6 +199,35 @@ class Header extends PureComponent {
             })}
           </View>
         </ModalCustom>
+        <Modal
+          transparent={true}
+          visible={this.state.visibleModalMore}
+          onRequestClose={this.doToggleModal("visibleModalMore", false)}
+        >
+          <TouchableWithoutFeedback
+            onPress={this.doToggleModal("visibleModalMore", false)}
+          >
+            <View style={styles.containerModalMore}>
+              <View style={styles.cardModalMore}>
+                {this.listButtonsModalMore.map(item => (
+                  <TouchableNativeFeedback
+                    onPress={item.onPress}
+                    key={item.label}
+                  >
+                    <View style={styles.itemModalMore}>
+                      <View style={styles.iconItemModalMore}>
+                        <Icon name={item.iconName} size={24} color={"black"} />
+                      </View>
+                      <Text style={styles.labelItemModalMore}>
+                        {item.label}
+                      </Text>
+                    </View>
+                  </TouchableNativeFeedback>
+                ))}
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
         <View
           style={[
             styles.wrapperInput,
@@ -146,7 +239,6 @@ class Header extends PureComponent {
           ]}
         >
           <TextInput
-            autoFocus={true}
             value={this.props.value}
             onFocus={this.onToggleTextInput}
             onBlur={this.onToggleTextInput}
@@ -158,7 +250,9 @@ class Header extends PureComponent {
             }}
           />
         </View>
-        <TouchableNativeFeedback onPress={this.doToggleModalListColors(true)}>
+        <TouchableNativeFeedback
+          onPress={this.doToggleModal("visibleListColors", true)}
+        >
           <View style={styles.wrapperRectangle}>
             <View
               style={[
@@ -167,6 +261,16 @@ class Header extends PureComponent {
               ]}
             />
           </View>
+        </TouchableNativeFeedback>
+        <TouchableNativeFeedback
+          onPress={this.doToggleModal("visibleModalMore", true)}
+        >
+          <Icon
+            name={"md-more"}
+            size={32}
+            color={"black"}
+            style={styles.icon}
+          />
         </TouchableNativeFeedback>
       </View>
     );

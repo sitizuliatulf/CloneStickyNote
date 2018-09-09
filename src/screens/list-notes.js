@@ -46,7 +46,8 @@ class ListNotes extends PureComponent {
     },
     modalAddNote: {
       visible: false
-    }
+    },
+    listNotes: []
   };
 
   constructor() {
@@ -81,6 +82,15 @@ class ListNotes extends PureComponent {
       modalChooseTypeNote: {
         visible
       }
+    });
+  };
+
+  onSaveNote = note => {
+    this.setState({
+      modalAddNote: {
+        visible: false
+      },
+      listNotes: [...this.state.listNotes, note]
     });
   };
 
@@ -136,7 +146,11 @@ class ListNotes extends PureComponent {
         <AddNote
           visible={this.state.modalAddNote.visible}
           onRequestClose={this.doToggleModalAddNote(false, false)}
+          onSaveNote={this.onSaveNote}
         />
+        {this.state.listNotes.map(item => (
+          <Text key={item.title}>{item.title}</Text>
+        ))}
       </View>
     );
   }
