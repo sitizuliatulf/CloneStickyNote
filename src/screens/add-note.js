@@ -5,12 +5,11 @@ import PropTypes from "prop-types";
 import Header from "../components/add-note/header";
 import Content from "../components/add-note/content";
 
-
 class AddNote extends PureComponent {
   state = {
     title: "",
     colorSelected: "#ffcd55",
-    content: "",
+    content: ""
   };
 
   handleOnChangeHeaderValue = stateName => value => {
@@ -39,7 +38,6 @@ class AddNote extends PureComponent {
           value={this.state.content}
           onChangeTextContent={this.handleOnChangeHeaderValue("content")}
           colorSelected={this.state.colorSelected}
-
         />
       </Modal>
     );
@@ -52,7 +50,7 @@ AddNote.propTypes = {
 };
 
 AddNote.defaultProps = {
-  onRequestClose: () => { }
+  onRequestClose: () => {}
 };
 
 export default AddNote;
