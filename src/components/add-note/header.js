@@ -281,7 +281,8 @@ Header.propTypes = {
   value: PropTypes.string.isRequired,
   colorSelected: PropTypes.string,
   onChangeTextHeader: PropTypes.func.isRequired,
-  onChangeColorSelected: PropTypes.func.isRequired
+  onChangeColorSelected: PropTypes.func.isRequired,
+  onSaveNote: PropTypes.func.isRequired
 };
 
 Header.defaultProps = {

@@ -56,7 +56,8 @@ class AddNote extends PureComponent {
 
 AddNote.propTypes = {
   visible: PropTypes.bool.isRequired,
-  onRequestClose: PropTypes.func
+  onRequestClose: PropTypes.func,
+  onSaveNote: PropTypes.func.isRequired
 };
 
 AddNote.defaultProps = {

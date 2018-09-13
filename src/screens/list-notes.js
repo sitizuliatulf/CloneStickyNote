@@ -86,6 +86,14 @@ class ListNotes extends PureComponent {
   };
 
   onSaveNote = note => {
+    // listnotes []
+    // this.state.listNotes.push(note);
+    // listnotes [opopo]
+    // const newListNotes = this.state.listNotes;
+
+    // listnotes [10, 20, 30]
+    // var x = this.state.listNotes.concat([], note)
+
     this.setState({
       modalAddNote: {
         visible: false

@@ -1,27 +1,18 @@
 import React from "react";
-import { TextInput, StyleSheet, View } from "react-native";
+import { TextInput, StyleSheet } from "react-native";
 
 const style = StyleSheet.create({
   container: {
-    flex: 1
-  },
-  input: {
-    fontSize: 18,
-    lineHeight: 24
+    height: 10
   }
 });
 
 const Content = props => (
-  <View style={[style.container, { backgroundColor: props.colorSelected }]}>
-    <TextInput
-      autoFocus={true}
-      value={props.value}
-      onChangeText={props.onChangeTextContent}
-      multiline={true}
-      underlineColorAndroid="transparent"
-      style={style.input}
-    />
-  </View>
+  <TextInput
+    value={props.value}
+    onChangeText={props.onChangeTextContent}
+    style={[style.container, { backgroundColor: props.colorSelected }]}
+  />
 );
 
 export default Content;
