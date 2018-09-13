@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   containerModal: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "centfer",
+    justifyContent: "center",
     backgroundColor: "rgba(0,0,0,0.3)"
   },
   cardBox: {
@@ -35,7 +35,7 @@ const ModalCustom = props => (
   >
     <TouchableWithoutFeedback onPress={props.onPressBackdrop}>
       <View style={styles.containerModal}>
-        <View style={styles.cardBox}>{props.renderChildren}</View>
+        <View style={styles.cardBox}>{props.children}</View>
       </View>
     </TouchableWithoutFeedback>
   </Modal>

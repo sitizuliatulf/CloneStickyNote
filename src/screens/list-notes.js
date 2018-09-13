@@ -5,7 +5,8 @@ import {
   StyleSheet,
   Modal,
   Dimensions,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  FlatList
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 
@@ -47,7 +48,173 @@ class ListNotes extends PureComponent {
     modalAddNote: {
       visible: false
     },
-    listNotes: []
+    listNotes: [
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      },
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      },
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      },
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      },
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      },
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      },
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      },
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      },
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      },
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      },
+      {
+        title: "Contekan ulangan matematika",
+        content: "OMG UWOW",
+        colorSelected: "red"
+      },
+      {
+        title: "Surat cinta untuk aa",
+        content: "OMG UWOW",
+        colorSelected: "blue"
+      },
+      {
+        title: "Password wifi tetangga",
+        content: "OMG UWOW",
+        colorSelected: "black"
+      }
+    ]
   };
 
   constructor() {
@@ -120,6 +287,12 @@ class ListNotes extends PureComponent {
   //     return true;
   //   }
 
+  _renderItemNote = ({ item, index }) => (
+    <View style={{ backgroundColor: item.colorSelected, paddingVertical: 10 }}>
+      <Text>{item.title}</Text>
+    </View>
+  );
+
   render() {
     return (
       <View style={styles.container}>
@@ -156,9 +329,14 @@ class ListNotes extends PureComponent {
           onRequestClose={this.doToggleModalAddNote(false, false)}
           onSaveNote={this.onSaveNote}
         />
-        {this.state.listNotes.map(item => (
-          <Text key={item.title}>{item.title}</Text>
-        ))}
+        <FlatList
+          data={this.state.listNotes}
+          keyExtractor={item => item.title}
+          renderItem={this._renderItemNote}
+          ItemSeparatorComponent={() => {
+            return "string";
+          }}
+        />
       </View>
     );
   }
