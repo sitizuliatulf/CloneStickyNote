@@ -19,7 +19,7 @@ class AddNote extends PureComponent {
   };
 
   onSaveNote = () => {
-    this.props.onSaveNote(this.state);
+    this.props.onSaveNote({ ...this.state, createdAt: new Date().getTime() });
     this.setState({
       title: "",
       content: "",
