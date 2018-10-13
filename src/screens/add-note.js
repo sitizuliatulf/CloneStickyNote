@@ -1,16 +1,62 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import { Modal } from "react-native";
 import PropTypes from "prop-types";
+// import _ from 'lodash'; // bad practice
+import isEqual from "lodash/isEqual"; // good practice
 
 import Header from "../components/add-note/header";
 import Content from "../components/add-note/content";
 
-class AddNote extends PureComponent {
+class AddNote extends Component {
   state = {
     title: "",
     content: "",
     colorSelected: Header.LIST_COLORS[0]
   };
+
+  shouldComponentUpdate(previousProps, previousState) {
+    if (
+      previousProps.visible !== this.props.visible ||
+      isEqual(previousProps.params, this.props.params) === false ||
+      previousState.title !== this.state.title ||
+      previousState.content !== this.state.content ||
+      isEqual(previousState.colorSelected, this.state.colorSelected) === false
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  componentDidUpdate(previousProps, previousState) {
+    /* 
+    
+    previousProps => is the value from previous property has given by parent
+    this props => is the current value from parrent when the previous value has been changed
+    
+    */
+
+    if (
+      previousProps.params.isEdit == false &&
+      this.props.params.isEdit == true
+    ) {
+      this.setState({
+        title: this.props.params.title,
+        content: this.props.params.content,
+        createdAt: this.props.params.createdAt,
+        colorSelected: this.props.params.colorSelected
+      });
+    } else if (
+      previousProps.params.isEdit == true &&
+      this.props.params.isEdit == false
+    ) {
+      this.setState({
+        title: "",
+        content: "",
+        createdAt: "",
+        colorSelected: Header.LIST_COLORS[0]
+      });
+    }
+  }
 
   handleOnChangeHeaderValue = stateName => value => {
     this.setState({
@@ -19,7 +65,14 @@ class AddNote extends PureComponent {
   };
 
   onSaveNote = () => {
-    this.props.onSaveNote({ ...this.state, createdAt: new Date().getTime() });
+    if (this.props.params.isEdit) {
+      this.props.onSaveNote({
+        ...this.state,
+        createdAt: this.props.params.createdAt
+      });
+    } else {
+      this.props.onSaveNote({ ...this.state, createdAt: new Date().getTime() });
+    }
     this.setState({
       title: "",
       content: "",
@@ -57,7 +110,8 @@ class AddNote extends PureComponent {
 AddNote.propTypes = {
   visible: PropTypes.bool.isRequired,
   onRequestClose: PropTypes.func,
-  onSaveNote: PropTypes.func.isRequired
+  onSaveNote: PropTypes.func.isRequired,
+  params: PropTypes.object.isRequired
 };
 
 AddNote.defaultProps = {

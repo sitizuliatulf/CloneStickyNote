@@ -1,15 +1,7 @@
 [
     {
-        "merged": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
-        "source": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
         "source": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
-    },
-    {
-        "merged": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\D:\\react-native\\CloneStickyNote\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
-        "source": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\D:\\react-native\\CloneStickyNote\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
         "merged": "D:\\react-native\\CloneStickyNote\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
@@ -18,5 +10,13 @@
     {
         "merged": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\D:\\react-native\\CloneStickyNote\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
         "source": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\D:\\react-native\\CloneStickyNote\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\D:\\react-native\\CloneStickyNote\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "D:\\home\\azhar\\project\\work\\CloneStickyNote\\android\\D:\\react-native\\CloneStickyNote\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     }
 ]

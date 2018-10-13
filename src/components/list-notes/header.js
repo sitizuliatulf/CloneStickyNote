@@ -2,14 +2,18 @@ import React from "react";
 import { Toolbar, ToolbarContent, ToolbarAction } from "react-native-paper";
 import PropTypes from "prop-types";
 
-const Header = ({ title, icons, ...other }) => (
+const Header = (props) => (
   <Toolbar>
-    <ToolbarContent title={title} />
-    {icons.map(itemIcon => (
+    <ToolbarContent title={props.title} />
+    {props.icons.map((itemIcon, index) => (
       <ToolbarAction key={itemIcon.name} {...itemIcon} />
     ))}
   </Toolbar>
 );
+
+/*
+{...itemIcon} => read more about destructing object in javascript
+*/
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,

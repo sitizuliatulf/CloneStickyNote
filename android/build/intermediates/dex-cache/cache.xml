@@ -21,21 +21,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Asus\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jar="C:\Users\ASUS\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_7791590cee95d69056e2f3cc2ac807640d494d5d.jar" />
+        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_56eb2b7006a3776dbacbb74e8f78a413b9b46496.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Asus\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
+        jar="C:\Users\ASUS\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
-        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_50fe1650078860385c58ce82a9e93293a089cf86.jar" />
+        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_768e7330b5472ddaa2e07f902d64ebc348daa04f.jar" />
     </item>
     <item
         is-multidex="false"
@@ -48,21 +48,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Asus\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jar="C:\Users\ASUS\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_d5ed78813cfd1626cc8926bd4f34dab01261e26a.jar" />
+        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_965dbd9d6e46c865a9ffe75d828bb80d3982f897.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Asus\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jar="C:\Users\ASUS\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_f003ad4dab4aaf0fb685d676d2138fe73bd156d6.jar" />
+        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_6d9650028ab827b81fc76ea8c92ba05f6193a950.jar" />
     </item>
     <item
         is-multidex="false"
@@ -70,7 +70,7 @@
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="f2cf527de8d0bd35d72088fafea02395ba4a9eec">
+        sha1="279750fed3c920d06351dbf32889c1b48203c7ad">
         <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\CloneStickyNote-react-native-vector-icons-unspecified_bc40f9d6bc249340f023d3e985c731bac138003f.jar" />
     </item>
     <item
@@ -129,12 +129,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Asus\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jar="C:\Users\ASUS\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_bb6e99b589552c222c2ef2b6c421caaeb9874123.jar" />
+        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_3fd97c60ad08e018805a5034bf4d15cebded625e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -174,30 +174,30 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Asus\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
+        jar="C:\Users\ASUS\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
-        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_9daffe4aa72448d724e0786da4bd75b38ba271fa.jar" />
+        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_4e735c50c994884fec093d13872b99f12f8d09d8.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Asus\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jar="C:\Users\ASUS\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_66d7cb8d49b0184a8ed0d8e46930271fe005877c.jar" />
+        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_9e4dc41b50ab7b2b331f5fc0b24c2398f4223d8c.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Asus\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jar="C:\Users\ASUS\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
         sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_2c648d5c99a6ffa718ab6f4a1162d50a6d118919.jar" />
+        <dex dex="D:\react-native\CloneStickyNote\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_e3aa1509f173aac5993ef7cc7c56a57a4c7d8210.jar" />
     </item>
 
 </items>

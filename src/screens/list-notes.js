@@ -82,7 +82,8 @@ class ListNotes extends PureComponent {
       visible: false
     },
     modalAddNote: {
-      visible: false
+      visible: false,
+      params: { isEdit: false }
     },
     listNotes: []
   };
@@ -124,7 +125,8 @@ class ListNotes extends PureComponent {
         visible: visibleTypeNote
       },
       modalAddNote: {
-        visible: visibleModalAddNote
+        visible: visibleModalAddNote,
+        params: { isEdit: false }
       }
     });
   };
@@ -145,11 +147,24 @@ class ListNotes extends PureComponent {
 
     // listnotes [10, 20, 30]
     // var x = this.state.listNotes.concat([], note)
-    const listNotes = [...this.state.listNotes, note];
+
+    let listNotes = this.state.listNotes;
+    if (this.state.modalAddNote.params.isEdit) {
+      listNotes = listNotes.map(item => {
+        if (item.createdAt === note.createdAt) {
+          return note;
+        }
+        return item;
+      });
+    } else {
+      listNotes = [...listNotes, note];
+    }
+
     this.setState(
       {
         modalAddNote: {
-          visible: false
+          visible: false,
+          params: { isEdit: false.title }
         },
         listNotes
       },
@@ -195,7 +210,7 @@ class ListNotes extends PureComponent {
     const createdTimeAt = `${oldTime.getFullYear()}/${oldTime.getMonth() +
       1}/${oldTime.getDate()} ${oldTime.getHours()}:${oldTime.getMinutes()}`;
     return (
-      <TouchableNativeFeedback onPress={() => alert(1)}>
+      <TouchableNativeFeedback onPress={this.doEditNote(item)}>
         <View
           style={[
             styles.wrapperItem,
@@ -220,6 +235,23 @@ class ListNotes extends PureComponent {
     );
   };
 
+  doEditNote = note => () => {
+    this.setState({
+      modalAddNote: {
+        visible: true,
+        params: { ...note, isEdit: true }
+      }
+    });
+  };
+
+  //kalau ...note dipisahin maka jadi kaya di bawa
+  //   params = {
+  //       title: '',
+  // content :'',
+  //createdAt :'',
+  //       isEdit: ''
+  // },
+
   // _keyExtractorNote = (dataType, key, keyFlatlist) => (item, index) => {
   //   if (dataType == "string") {
   //     return `${keyFlatlist}-${item}`;
@@ -227,6 +259,7 @@ class ListNotes extends PureComponent {
   //   return `${keyFlatlist}-${item[key]}`;
   // };
 
+  //untuk membedakan saat flatlist ngelooping, dan di ambil key nya title
   _keyExtractorNote = (item, index) => item.title;
 
   render() {
@@ -264,6 +297,7 @@ class ListNotes extends PureComponent {
           visible={this.state.modalAddNote.visible}
           onRequestClose={this.doToggleModalAddNote(false, false)}
           onSaveNote={this.onSaveNote}
+          params={this.state.modalAddNote.params}
         />
         <FlatList
           data={this.state.listNotes}

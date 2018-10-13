@@ -50,17 +50,14 @@ export default class App extends Component {
 
   constructor() {
     super();
-    console.log("constructor kepanggil");
     this.name = "zuli";
   }
 
   componentDidMount() {
-    console.log("component did mount kepanggil");
     this.name = "zuli";
   }
 
   componentDidUpdate(previousProps, previousState) {
-    console.log("component did update kepanggil");
     if (previousState.name == "zuli") {
       this.name = "siti zuliatul";
       // this.forceUpdate();
